@@ -8,6 +8,9 @@ describe Converter do
   describe '.convert' do
     it 'converts a string given a type' do
       expect(converter.convert_to(:text)).to eq "Example string"
+      expect(converter.convert_to(:html)).to eq "<html>Example string</html>"
+      expect(converter.convert_to(:json)).to eq "{result: Example string}"
+      expect(converter.convert_to(:xml)).to eq "<xml>Example string</xml>"
     end
 
     it 'raises an error given an unrecognised type' do
